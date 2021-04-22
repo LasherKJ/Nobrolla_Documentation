@@ -1,0 +1,16 @@
+image: beevelop/nodejs-python
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - apt-get update -y && apt-get install wget
+            - apt-get -y install git
+            - npm cache clean --force
+            - npm install -g n
+            - n 12.16.3
+            - wget https://github.com/gohugoio/hugo/releases/download/v0.68.0/hugo_extended_0.68.0_Linux-64bit.deb
+            - dpkg -i hugo*.deb
+            - hugo --baseURL https://__baseurl__ --buildDrafts
+            - npm install aerobatic-cli --global
+            - aero deploy --directory public

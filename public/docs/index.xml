@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Nobrolla Video API</title>
+    <link>https://nobrolla-docs.aerobaticapp.com/docs/</link>
+    <description>Recent content in Docs on Nobrolla Video API</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://nobrolla-docs.aerobaticapp.com/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cores</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/docs/cores/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/docs/cores/</guid>
+      <description>Cores Cores are NVS objects that work on jobs. Each core is capable of running one job at a time. Cores can be assigned a live video feed or a job from the workflow.
+POST /api/cores GET /api/cores GET /api/cores/[name] PUT /api/cores/[name]* DELETE /api/cores/[name] </description>
+    </item>
+    
+    <item>
+      <title>Jobs</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/docs/jobs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/docs/jobs/</guid>
+      <description>Jobs Jobs can be sent to the workflow and be processed automatically based on availability.
+ Facial Detection Audio Loss Audio Format Audio Language Video Quality Video Source indexing Shot Change Detection Text Detection Explicit Content Detection Logo Recognition Celebrity Recognition Person Detection Ad Placement Suggestion Lip Sync Detection Video Indexing  Making a request    Attribute Type Description     inputUri string Location of target file (required if no inputContent attribute)   inputContent string base64 encoded string(required if no inputUri attribute)   features [enum,&amp;hellip;] An array of Features   videoContext object an object of options for the job   outputUri string a filename to write the returned output to    { &amp;#34;inputUri&amp;#34;: string, &amp;#34;inputContent&amp;#34;: string, &amp;#34;features&amp;#34;: [enum (Feature)], &amp;#34;videoContext&amp;#34;:{object (videoContext)}, &amp;#34;outputUri&amp;#34;: string } Video Context The videoContext object defines parameters for the job request</description>
+    </item>
+    
+    <item>
+      <title>Long Running Jobs</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/docs/longrunningjobs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/docs/longrunningjobs/</guid>
+      <description>Long Running Jobs Long running jobs return real-time data from the Nobrolla Video System as it analyzes video and can be used for live video streams, or for videos with a long duration. Instead of returning the results of jobs once the video is finished being analyzed, long running jobs return data over a websocket in real time as well as returning the entirety of the results when the video is complete or the live video source is terminated.</description>
+    </item>
+    
+    <item>
+      <title>Nobrolla API</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/docs/nobrolla-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/docs/nobrolla-api/</guid>
+      <description>Nobrolla Video System API The Nobrolla Video System (NVS) API documentation encompasses REST commands for creating jobs and work flows. While there is a User Interface accessible from your Gentoo Server, this documentation covers the end-points you can use to send commands directly to Gentoo.
+Cores POST /api/cores GET /api/cores GET /api/cores/[name] PUT /api/cores/[name]* DELETE /api/cores/[name] Cores are NVS objects that work on jobs. Each core is capable of running one job at a time.</description>
+    </item>
+    
+    <item>
+      <title>Workflows</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/docs/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/docs/workflow/</guid>
+      <description>Workflows </description>
+    </item>
+    
+  </channel>
+</rss>

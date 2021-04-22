@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features on Nobrolla Video API</title>
+    <link>https://nobrolla-docs.aerobaticapp.com/features/</link>
+    <description>Recent content in Features on Nobrolla Video API</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://nobrolla-docs.aerobaticapp.com/features/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Audio Format</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/audio-format/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/audio-format/</guid>
+      <description>Audio Format The Nobrolla API Audio Format feature analyzes the audio of a video and returns the detected format
+ 5.1 5.1 Mono 5.1 Stereo.1 Stereo 5.1.1 Stereo Mono Stereo Pairs  Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;AUDIO_FORMAT&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;audioFormatConfig&amp;#34;:{ &amp;#34;compressed_channels&amp;#34;:[0,1,..] } } } Options    Attribute Type Default Description     compressed_channels [num,num,&amp;hellip;] [empty array] Array of channels to allow compressed audio    Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;audioFormatAnnotations&amp;#34;:[ {&amp;#34;segment&amp;#34;: { &amp;#34;startTimeOffset&amp;#34;:&amp;#34;12.</description>
+    </item>
+    
+    <item>
+      <title>Audio Loss</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/audio-loss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/audio-loss/</guid>
+      <description>Audio Loss The Nobrolla API Audio Loss feature analyzes video and searches for segments of video where audio would be expected, but is not being played.
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;AUDIO_LOSS&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;audioLossConfig&amp;#34;:{ &amp;#34;delay&amp;#34;:3.5, &amp;#34;silence_level&amp;#34;:.003, &amp;#34;track&amp;#34;:[0,1,..] } } } Options    Attribute Type Default Description     delay float 7.0 Amount of time audio is allowed to be silent before an alarm is triggered   silence_level float .</description>
+    </item>
+    
+    <item>
+      <title>In Black</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/in-black/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/in-black/</guid>
+      <description>In Black The Nobrolla API In Black feature analyzes video and searches for segments where video and audio would be expected, but no audio is being generated and the image is black.
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;IN_BLACK&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;inBlackConfig&amp;#34;:{ &amp;#34;delay&amp;#34;:1, &amp;#34;black_value&amp;#34;:.02 } } } Options    Attribute Type Default Description     delay float 7.0 Amount of time in black is allowed before feature is triggered   black_value float .</description>
+    </item>
+    
+    <item>
+      <title>Logo Recognition</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/logo-recognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/logo-recognition/</guid>
+      <description>Logo Recognition The Nobrolla API Logo Recognition feature analyzes video to detect logos
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;LOGO_RECOGNITION&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;logoRecognitionConfig&amp;#34;:{ &amp;#34;logos&amp;#34;:[&amp;#34;logo1.jpg&amp;#34;,&amp;#34;logo3.jpg&amp;#34;] } } } Options    Attribute Type Default Description     logos [&amp;ldquo;file-uri&amp;rdquo;,&amp;hellip; [empty array] Logos to track. An empty array tracks all logos known by the NVS system    Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;logoRecognitionAnnotations&amp;#34;:[ { &amp;#34;entity&amp;#34;:{ &amp;#34;description&amp;#34;:&amp;#34;Nobrolla Video Systems&amp;#34; }, &amp;#34;confidence&amp;#34;:&amp;#34;0.</description>
+    </item>
+    
+    <item>
+      <title>Shot Change</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/shot-change/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/shot-change/</guid>
+      <description>Shot Change Detection The Nobrolla API Shot Change feature analyzes video and searches for a shot change.
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;SHOT_CHANGE_DETECTION&amp;#34;] } Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;shotChangeAnnotiations&amp;#34;:[ { &amp;#34;startTimeOffset&amp;#34;:&amp;#34;0s&amp;#34;, &amp;#34;endTimeOffset&amp;#34;:&amp;#34;1.19s&amp;#34; }, { &amp;#34;startTimeOffset&amp;#34;:&amp;#34;42.22s&amp;#34;, &amp;#34;endTimeOffset&amp;#34;:&amp;#34;59.59s&amp;#34; }, { &amp;#34;startTimeOffset&amp;#34;:&amp;#34;120.22s&amp;#34;, &amp;#34;endTimeOffset&amp;#34;:&amp;#34;122.35s&amp;#34; } ]} ] } </description>
+    </item>
+    
+    <item>
+      <title>Text Detection</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/text-detection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/text-detection/</guid>
+      <description>Text Detection The Nobrolla API In Black feature analyzes video and searches for segments where video and audio would be expected, but no audio is being generated and the image is black.
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;TEXT_DETECTION&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;textDetectionConfig&amp;#34;:{ &amp;#34;languagHints&amp;#34;:&amp;#34;spanish&amp;#34; } } } Options    Attribute Type Default Description     languageHints enum (&amp;ldquo;english&amp;rdquo;, &amp;ldquo;spanish&amp;rdquo;, &amp;ldquo;any&amp;rdquo;) &amp;ldquo;english&amp;rdquo; Language to detect.    Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;textDetectionAnnotations&amp;#34;:[ { &amp;#34;text&amp;#34;:&amp;#34;Grand Opening!</description>
+    </item>
+    
+    <item>
+      <title>Video Quality</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/video-quality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/video-quality/</guid>
+      <description>Video Quality The Nobrolla API Video Quality feature analyzes video and searches for segments where video and audio quality drop.
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;VIDEO_QUALITY&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;videoQualityConfig&amp;#34;:{ &amp;#34;minimum&amp;#34;:0.9 } } } Options    Attribute Type Default Description     MINIMUM float 0.1 - 1 .5 The minimum quality level allowed    Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;videoQualityAnnotations&amp;#34;:[ {&amp;#34;segment&amp;#34;: { &amp;#34;startTimeOffset&amp;#34;:&amp;#34;12.22s&amp;#34;, &amp;#34;endTimeOffset&amp;#34;:&amp;#34;19.19s&amp;#34; }, &amp;#34;value&amp;#34;:0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/template/</guid>
+      <description>TITLE The Nobrolla API In TITLE feature DOES THINGS
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;TITLE_GOES_HERE&amp;#34;], &amp;#34;options&amp;#34;:[{&amp;#34;TITLE_GOES_HERE&amp;#34;:object}] } Options    Attribute Type Default Description     attribute type &amp;ldquo;default value Description of attribute    Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;titleAnnotions&amp;#34;:[ {&amp;#34;segment&amp;#34;: { &amp;#34;startTimeOffset&amp;#34;:&amp;#34;12.22s&amp;#34;, &amp;#34;endTimeOffset&amp;#34;:&amp;#34;19.19s&amp;#34; } } ]}, ] } </description>
+    </item>
+    
+    <item>
+      <title>Ad Placement Suggestion</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/ad-placement-suggestion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/ad-placement-suggestion/</guid>
+      <description>Ad Placement Suggestion The Nobrolla API Ad Placement Suggestion feature analyzes video looking for scene changes or periods in black, and suggests the best placement for ads.
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;AD_PLACEMENT_SUGGESTION&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;adPlacementConfig&amp;#34;:{ &amp;#34;ad_spot&amp;#34;:&amp;#34;file-uri.mp4&amp;#34; } } } Options    Attribute Type Default Description     ad spot fileUri none The file of the ad    Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;adPlacementSuggestion&amp;#34;:[ {&amp;#34;segment&amp;#34;: { &amp;#34;startTimeOffset&amp;#34;:&amp;#34;12.</description>
+    </item>
+    
+    <item>
+      <title>Celebrity Recognition</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/celebrity-recognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/celebrity-recognition/</guid>
+      <description>TITLE The Nobrolla API In Celebrity Recognition feature analyzes video looking for a specific person or persons
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;CELEBRITY_RECOGNITION&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;celebrityRecognitionConfig&amp;#34;:{ &amp;#34;model&amp;#34;:[&amp;#34;face.jpg&amp;#34;,&amp;#34;face2.jpg&amp;#34;] } } } Options    Attribute Type Default Description     model [&amp;ldquo;fileUri&amp;rdquo;,&amp;ldquo;fileUri&amp;rdquo;,&amp;hellip;] [empty array] Array of image files or video files of a celebrity. The more files provided, the more accurate the results    Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;titleAnnotions&amp;#34;:[ { &amp;#34;confidence&amp;#34;:&amp;#34;0.</description>
+    </item>
+    
+    <item>
+      <title>Lip Sync Detection</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/lip-sync/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/lip-sync/</guid>
+      <description>Lip Sync Detection The Nobrolla API Lip Sync Detection feature analyzes video and audio and searches for segments where the two do not line up
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;LIP_SYNC_DETECTION&amp;#34;] } Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;lipSyncDetectionAnnotions&amp;#34;:[ { &amp;#34;confidence&amp;#34;:&amp;#34;0.8238&amp;#34;, &amp;#34;segment&amp;#34;: { &amp;#34;startTimeOffset&amp;#34;:&amp;#34;12.22s&amp;#34;, &amp;#34;endTimeOffset&amp;#34;:&amp;#34;19.19s&amp;#34; } } ]}, ] } </description>
+    </item>
+    
+    <item>
+      <title>Person Recognition</title>
+      <link>https://nobrolla-docs.aerobaticapp.com/features/person-recognition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nobrolla-docs.aerobaticapp.com/features/person-recognition/</guid>
+      <description>Person Recognition The Nobrolla API Person Recognition feature analyzes video searching for a specific person
+Request JSON body { &amp;#34;inputUri&amp;#34;: &amp;#34;input-uri&amp;#34;, &amp;#34;features&amp;#34;:[&amp;#34;PERSON_RECOGNITION&amp;#34;], &amp;#34;videoContext&amp;#34;:{ &amp;#34;personRecognitionConfig&amp;#34;:{ &amp;#34;model&amp;#34;:[&amp;#34;face.jpg&amp;#34;,&amp;#34;face2.jpg&amp;#34;] } } } Options    Attribute Type Default Description     model [&amp;ldquo;fileUri&amp;rdquo;,&amp;ldquo;fileUri&amp;rdquo;,&amp;hellip;] [empty array] Array of image files or video files of a person. The more files provided, the more accurate the results    Nobrolla API JSON return { &amp;#34;results&amp;#34;:[ {&amp;#34;titleAnnotions&amp;#34;:[ { &amp;#34;confidence&amp;#34;:&amp;#34;0.</description>
+    </item>
+    
+  </channel>
+</rss>

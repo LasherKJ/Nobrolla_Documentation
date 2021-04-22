@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Long Running Jobs Long running jobs return real-time data from the Nobrolla Video System as it analyzes video and can be used for live video streams, or for videos with a long duration. Instead of returning the results of jobs once the video is finished being analyzed, long running jobs return data over a websocket in real time as well as returning the entirety of the results when the video is complete or the live video source is terminated.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Long Running Jobs" />
+<meta property="og:description" content="Long Running Jobs Long running jobs return real-time data from the Nobrolla Video System as it analyzes video and can be used for live video streams, or for videos with a long duration. Instead of returning the results of jobs once the video is finished being analyzed, long running jobs return data over a websocket in real time as well as returning the entirety of the results when the video is complete or the live video source is terminated." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nobrolla-docs.aerobaticapp.com/docs/longrunningjobs/" />
+
+<title>Long Running Jobs | Nobrolla Video API</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.134b70e5316650a530cb42e4e8630b2a01d532bebfc0337028211175336e4806.css" integrity="sha256-E0tw5TFmUKUwy0Lk6GMLKgHVMr6/wDNwKCERdTNuSAY=">
+<script defer src="/en.search.min.3f238edc00910a0f63a66e775c49b54833a98550f4520e9a3c1efe44d5d4c0ae.js" integrity="sha256-PyOO3ACRCg9jpm53XEm1SDOphVD0Ug6aPB7&#43;RNXUwK4="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/logo.png" alt="Logo" /><span>Nobrolla Video API</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/docs/nobrolla-api/">API</a>
+<ul>
+<li><a href="/docs/cores/">cores</a></li>
+<li><a href="/docs/jobs/">jobs</a></li>
+</ul>
+</li>
+<li><a href="/features/">Features</a>
+<ul>
+<li><a href="/features/audio-format/">audio format</a></li>
+<li><a href="/features/audio-loss/">audio loss</a></li>
+<li><a href="/features/in-black/">in black</a></li>
+<li><a href="/features/shot-change/">shot change</a></li>
+<li><a href="/features/text-detection/">text detection</a></li>
+<li><a href="/features/video-quality/">video quality</a></li>
+<li><a href="/features/logo-recognition/">logo recognition</a></li>
+<li><a href="/features/celebrity-recognition/">celebrity recognition</a></li>
+<li><a href="/features/person-recognition/">person recognition</a></li>
+<li><a href="/features/ad-placement-suggestion/">ad placement suggestion</a></li>
+<li><a href="/features/lip-sync/">lip sync detection</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Long Running Jobs</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#initializing-a-websocket">Initializing a websocket</a></li>
+    <li><a href="#handling-the-onmessage-event">Handling the onmessage event</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="long-running-jobs">Long Running Jobs</h1>
+<p>Long running jobs return real-time data from the Nobrolla Video System as it analyzes video and can be used for live video streams, or for videos with a long duration. Instead of returning the results of jobs once the video is finished being analyzed, long running jobs return data over a websocket in real time as well as returning the entirety of the results when the video is complete or the live video source is terminated.</p>
+<h2 id="initializing-a-websocket">Initializing a websocket</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVASCRIPT" data-lang="JAVASCRIPT">
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doThing</span>(){
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#75715e">/*your server url*/</span>
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">websocket</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">WebSocket</span>(<span style="color:#a6e22e">url</span>)
+    <span style="color:#a6e22e">websocket</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">data</span>)
+    }
+}
+</code></pre></div><h2 id="handling-the-onmessage-event">Handling the onmessage event</h2>
+<p>The onmessage event will return the JSON from the NVS api, and contain the results from the jobs applied to the media.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#initializing-a-websocket">Initializing a websocket</a></li>
+    <li><a href="#handling-the-onmessage-event">Handling the onmessage event</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

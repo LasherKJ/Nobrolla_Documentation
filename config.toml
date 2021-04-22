@@ -1,0 +1,10 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Nobrolla Video API"
+theme = "book"
+enableRobotsTXT = "true"
+
+[params]
+    BookLogo = 'logo.png'
+    BookMenuBundle = '/menu'
+    BookSection = '*'

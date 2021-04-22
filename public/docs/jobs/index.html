@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jobs Jobs can be sent to the workflow and be processed automatically based on availability.
+ Facial Detection Audio Loss Audio Format Audio Language Video Quality Video Source indexing Shot Change Detection Text Detection Explicit Content Detection Logo Recognition Celebrity Recognition Person Detection Ad Placement Suggestion Lip Sync Detection Video Indexing  Making a request    Attribute Type Description     inputUri string Location of target file (required if no inputContent attribute)   inputContent string base64 encoded string(required if no inputUri attribute)   features [enum,&hellip;] An array of Features   videoContext object an object of options for the job   outputUri string a filename to write the returned output to    { &#34;inputUri&#34;: string, &#34;inputContent&#34;: string, &#34;features&#34;: [enum (Feature)], &#34;videoContext&#34;:{object (videoContext)}, &#34;outputUri&#34;: string } Video Context The videoContext object defines parameters for the job request">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Jobs" />
+<meta property="og:description" content="Jobs Jobs can be sent to the workflow and be processed automatically based on availability.
+ Facial Detection Audio Loss Audio Format Audio Language Video Quality Video Source indexing Shot Change Detection Text Detection Explicit Content Detection Logo Recognition Celebrity Recognition Person Detection Ad Placement Suggestion Lip Sync Detection Video Indexing  Making a request    Attribute Type Description     inputUri string Location of target file (required if no inputContent attribute)   inputContent string base64 encoded string(required if no inputUri attribute)   features [enum,&hellip;] An array of Features   videoContext object an object of options for the job   outputUri string a filename to write the returned output to    { &#34;inputUri&#34;: string, &#34;inputContent&#34;: string, &#34;features&#34;: [enum (Feature)], &#34;videoContext&#34;:{object (videoContext)}, &#34;outputUri&#34;: string } Video Context The videoContext object defines parameters for the job request" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nobrolla-docs.aerobaticapp.com/docs/jobs/" />
+
+<title>Jobs | Nobrolla Video API</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.134b70e5316650a530cb42e4e8630b2a01d532bebfc0337028211175336e4806.css" integrity="sha256-E0tw5TFmUKUwy0Lk6GMLKgHVMr6/wDNwKCERdTNuSAY=">
+<script defer src="/en.search.min.3f238edc00910a0f63a66e775c49b54833a98550f4520e9a3c1efe44d5d4c0ae.js" integrity="sha256-PyOO3ACRCg9jpm53XEm1SDOphVD0Ug6aPB7&#43;RNXUwK4="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/logo.png" alt="Logo" /><span>Nobrolla Video API</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/docs/nobrolla-api/">API</a>
+<ul>
+<li><a href="/docs/cores/">cores</a></li>
+<li><a href="/docs/jobs/"class=active>jobs</a></li>
+</ul>
+</li>
+<li><a href="/features/">Features</a>
+<ul>
+<li><a href="/features/audio-format/">audio format</a></li>
+<li><a href="/features/audio-loss/">audio loss</a></li>
+<li><a href="/features/in-black/">in black</a></li>
+<li><a href="/features/shot-change/">shot change</a></li>
+<li><a href="/features/text-detection/">text detection</a></li>
+<li><a href="/features/video-quality/">video quality</a></li>
+<li><a href="/features/logo-recognition/">logo recognition</a></li>
+<li><a href="/features/celebrity-recognition/">celebrity recognition</a></li>
+<li><a href="/features/person-recognition/">person recognition</a></li>
+<li><a href="/features/ad-placement-suggestion/">ad placement suggestion</a></li>
+<li><a href="/features/lip-sync/">lip sync detection</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Jobs</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#making-a-request">Making a request</a></li>
+    <li><a href="#video-context">Video Context</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="jobs">Jobs</h1>
+<p>Jobs can be sent to the workflow and be processed automatically based on availability.</p>
+<ul>
+<li>Facial Detection</li>
+<li>Audio Loss</li>
+<li>Audio Format</li>
+<li>Audio Language</li>
+<li>Video Quality</li>
+<li>Video Source indexing</li>
+<li>Shot Change Detection</li>
+<li>Text Detection</li>
+<li>Explicit Content Detection</li>
+<li>Logo Recognition</li>
+<li>Celebrity Recognition</li>
+<li>Person Detection</li>
+<li>Ad Placement Suggestion</li>
+<li>Lip Sync Detection</li>
+<li>Video Indexing</li>
+</ul>
+<h2 id="making-a-request">Making a request</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inputUri</td>
+<td>string</td>
+<td>Location of target file (required if no inputContent attribute)</td>
+</tr>
+<tr>
+<td>inputContent</td>
+<td>string</td>
+<td>base64 encoded string(required if no inputUri attribute)</td>
+</tr>
+<tr>
+<td>features</td>
+<td>[enum,&hellip;]</td>
+<td>An array of Features</td>
+</tr>
+<tr>
+<td>videoContext</td>
+<td>object</td>
+<td>an object of options for the job</td>
+</tr>
+<tr>
+<td>outputUri</td>
+<td>string</td>
+<td>a filename to write the returned output to</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVASCRIPT" data-lang="JAVASCRIPT">{
+    <span style="color:#e6db74">&#34;inputUri&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>,
+    <span style="color:#e6db74">&#34;inputContent&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>,
+    <span style="color:#e6db74">&#34;features&#34;</span><span style="color:#f92672">:</span> [<span style="color:#66d9ef">enum</span> (<span style="color:#a6e22e">Feature</span>)],
+    <span style="color:#e6db74">&#34;videoContext&#34;</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">object</span> (<span style="color:#a6e22e">videoContext</span>)},
+    <span style="color:#e6db74">&#34;outputUri&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>
+}
+</code></pre></div><h2 id="video-context">Video Context</h2>
+<p>The videoContext object defines parameters for the job request</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>segments[]</td>
+<td>array</td>
+<td>Segments of the video to process. Segments can overlap. If not included, the entire video will be analyzed</td>
+</tr>
+<tr>
+<td>pri (optional)</td>
+<td>num (0-139)</td>
+<td>Priority of the feature. Default is 20</td>
+</tr>
+<tr>
+<td>audioFormatConfig</td>
+<td>object</td>
+<td><a href="/features/audio-format/">Audio Format options</a></td>
+</tr>
+<tr>
+<td>audioLossConfig</td>
+<td>object</td>
+<td><a href="/features/audio-loss/">Audio Loss options</a></td>
+</tr>
+<tr>
+<td>inBlackConfig</td>
+<td>object</td>
+<td><a href="/features/in-black/">In Black options</a></td>
+</tr>
+<tr>
+<td>shotChangeConfig</td>
+<td>object</td>
+<td><a href="/features/shot-change/">Shot Change options</a></td>
+</tr>
+<tr>
+<td>textDetectionConfig</td>
+<td>object</td>
+<td><a href="/features/text-detection/">Text Detection options</a></td>
+</tr>
+<tr>
+<td>videoQualityConfig</td>
+<td>object</td>
+<td><a href="/features/video-quality/">Video Quality options</a></td>
+</tr>
+<tr>
+<td>logoRecognitionConfig</td>
+<td>object</td>
+<td><a href="/features/logo-recognition/">Logo Recognition options</a></td>
+</tr>
+<tr>
+<td>celebrityRecognitionConfig</td>
+<td>object</td>
+<td><a href="/features/celebrity-recognition/">Celebrity Recognition options</a></td>
+</tr>
+<tr>
+<td>personRecognitionConfig</td>
+<td>object</td>
+<td><a href="/features/person-recognition/">Person Recognition options</a></td>
+</tr>
+<tr>
+<td>adPlacementSuggestinConfig</td>
+<td>object</td>
+<td><a href="/features/ad-placement-suggestion/">Ad Placement Suggestion options</a></td>
+</tr>
+<tr>
+<td>lipSyncDetectionCongif</td>
+<td>object</td>
+<td><a href="/features/lip-sync/">Lip Sync Detection options</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVASCRIPT" data-lang="JAVASCRIPT">
+{
+    <span style="color:#e6db74">&#34;inputUri&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>,
+    <span style="color:#e6db74">&#34;inputContent&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>,
+    <span style="color:#e6db74">&#34;features&#34;</span><span style="color:#f92672">:</span> [<span style="color:#66d9ef">enum</span> (<span style="color:#a6e22e">Feature</span>)],
+    <span style="color:#e6db74">&#34;videoContext&#34;</span><span style="color:#f92672">:</span>{
+        <span style="color:#a6e22e">segments</span><span style="color:#f92672">:</span>[
+            {
+                <span style="color:#a6e22e">startTimeOffset</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;0s&#39;</span>,
+                <span style="color:#a6e22e">endTimeOffset</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;33.06s&#39;</span>
+            }
+        ],
+        <span style="color:#a6e22e">pri</span><span style="color:#f92672">:</span><span style="color:#ae81ff">130</span>,
+        <span style="color:#a6e22e">inBlackConfig</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">object</span>},
+        <span style="color:#a6e22e">logoRecognitionConfig</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">object</span>}
+    },
+    <span style="color:#e6db74">&#34;outputUri&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>
+}
+
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#making-a-request">Making a request</a></li>
+    <li><a href="#video-context">Video Context</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+id: 44bf7cca-dabe-43e3-a9fb-fc1343fc1a8c
+deploy:
+  ignore: []
+  directory: .
+plugins:
+  - name: webpage

@@ -1,0 +1,4 @@
+{{ if (findRE "<pre" .Content 1) }}
+    {{- $cbJS := resources.Get "clipboard.js" | resources.ExecuteAsTemplate "clipboard.js" . | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $cbJS.RelPermalink }}"></script>
+{{ end }}
